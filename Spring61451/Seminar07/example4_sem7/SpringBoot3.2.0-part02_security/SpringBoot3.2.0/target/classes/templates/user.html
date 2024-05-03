@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Products</title>
+	<style>
+		h1 {
+            color: darkred;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+	</style>
+</head>
+<body>
+<h1>Products</h1>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+	</tr>
+	<tr th:each="product : ${products}">
+		<td th:text="${product.name}"></td>
+		<td th:text="${product.price}"></td>
+	</tr>
+</table>
+<h1 th:text="${message}"></h1>
+<a href="/" class="button">Вернуться в начало</a>
+</body>
+</html>
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml"-->
+<!--	xmlns:th="https://www.thymeleaf.org"-->
+<!--	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<meta name="viewport"-->
+<!--	content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--<title>Spring Boot Tutorial</title>-->
+<!--<link rel="stylesheet" th:href="@{/css/style.css}">-->
+<!--</head>-->
+<!--<body>-->
+<!--	<div th:replace="~{page-templates :: navbar}"></div>-->
+<!--	<div class="main">-->
+<!--		<div th:replace="~{page-templates :: main-text}"></div>-->
+<!--		<div class="text">-->
+<!--			<h2 th:text="${text}"></h2>-->
+<!--			<div>-->
+<!--            	<p>User: <span sec:authentication="name">NOT FOUND</span></p>-->
+<!--            	<p>Spring Roles: <span sec:authentication="principal.authorities">NOT FOUND</span></p>-->
+<!--        	</div>-->
+<!--		</div>-->
+<!--		<div th:replace="~{page-templates :: footer}"></div>-->
+<!--	</div>-->
+<!--</body>-->
+<!--</html>-->
